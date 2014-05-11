@@ -17,11 +17,11 @@
 	<inceptionYear>2014</inceptionYear>
 
 	<scm>
-		<connection></connection>
-		<developerConnection></developerConnection>
-		<url></url>
+		<connection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-archetypes/opencms-module-demo-archetype/trunk</connection>
+		<developerConnection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-archetypes/opencms-module-demo-archetype/trunk</developerConnection>
+		<url>http://karmaware.mine.nu/svn/kw/maven-archetypes/opencms-module-demo-archetype/trunk</url>
 	</scm>
-
+	
 	<ciManagement>
 		<system></system>
 		<url></url>
