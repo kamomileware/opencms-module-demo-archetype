@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+  name="module-example">
+	<requiredProperties>
+		<requiredProperty key="artifactId">
+			<defaultValue>oc-module</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="groupId">
+			<defaultValue>com.kamomileware.opencms</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="package">
+			<defaultValue>${groupId}.${artifactId}</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="version">
+			<defaultValue>1.0.0-SNAPSHOT</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="resources-encoding">
+			<defaultValue>UTF-8</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="module-plugin-version">
+			<defaultValue>0.1.0-SNAPSHOT</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+	<fileSets>
+		<fileSet filtered="true" packaged="true">
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="false" packaged="true">
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/manifest</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/module/templates</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true">
+			<directory>src/main/module/schemas</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/module-resources</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<!-- empty directories -->
+		<fileSet filtered="false">
+			<directory>src/main/module/resources/css</directory>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/module/resources/js</directory>
+		</fileSet>
+	</fileSets>
+</archetype-descriptor>

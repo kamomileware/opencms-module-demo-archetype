@@ -1,0 +1,4 @@
+<resources>
+	<resource uri="/system/modules/${manifest.module.name}/"/>
+	<resource uri="/system/workplace/resources/filetypes/${project.artifactId}"/>
+</resources>

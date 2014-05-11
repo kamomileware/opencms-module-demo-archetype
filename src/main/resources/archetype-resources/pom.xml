@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<artifactId>${artifactId}</artifactId>
+	<groupId>${groupId}</groupId>
+	<version>${version}</version>
+	<packaging>opencms-module</packaging>
+	
+	<name>OC Module</name>
+	<description>
+	Basic OpenCms Module project featuring:
+		- manifest.xml generation
+		- content type definitions
+		- explorer types definitions
+		- content files export
+		- file and folder properties definitions
+	</description>
+	
+	<scm>
+		<connection></connection>
+		<developerConnection></developerConnection>
+		<url></url>
+	</scm>
+	
+	<properties>
+		<resources.encoding>${resources-encoding}</resources.encoding>
+		<opencms.module.plugin.version>${module-plugin-version}</opencms.module.plugin.version>
+		<!-- Configures the module plugin -->
+		<manifest.module.name>${project.groupId}.${project.artifactId}</manifest.module.name>
+		<manifest.module.group>${project.groupId}</manifest.module.group>
+		<manifest.module.version>1.0.0</manifest.module.version>
+		<manifest.encoding>${resources.encoding}</manifest.encoding>
+		<module.descriptors.encoding>${resources.encoding}</module.descriptors.encoding>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.opencms</groupId>
+			<artifactId>opencms-core</artifactId>
+			<version>9.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+	
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.kamomileware.maven.plugin.opencms</groupId>
+				<artifactId>opencms-module-maven-plugin</artifactId>
+				<version>${opencms.module.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<moduleResources>
+						<!-- Additional module resources -->
+						<moduleResource>
+							<directory>src/main/module-resources/explorer_icons</directory>
+							<moduleTargetPath>filetype_icons</moduleTargetPath>
+							<opencmsTargetPath>system/workplace/resources/filetypes/${project.artifactId}</opencmsTargetPath>
+						</moduleResource>
+						<moduleResource>
+							<directory>src/main/module-resources/site_content</directory>
+							<moduleTargetPath>content</moduleTargetPath>
+							<opencmsTargetPath>sites/examples</opencmsTargetPath>
+						</moduleResource>
+					</moduleResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

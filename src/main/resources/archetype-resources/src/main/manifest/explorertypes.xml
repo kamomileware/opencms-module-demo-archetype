@@ -1,0 +1,20 @@
+
+<explorertypes>
+	<!-- Base Page -->
+	<explorertype name="initial.page" key="resource.type.initial"
+		icon="${project.artifactId}/initial.page.png" reference="xmlcontent">
+		<newresource uri="newresource.jsp?page=initial.page" info="resource.desc.initial"
+			order="12" autosetnavigation="false" autosettitle="false" />
+		<accesscontrol>
+			<!-- <accessentry principal="GROUP.${project.artifactId}/usergroup" permissions="+r+v+w+c+d"/> -->
+			<!-- <accessentry principal="ROLE.VFS_MANAGER" permissions="+r+v+w+c+d"/> -->
+		</accesscontrol>
+	</explorertype>
+
+	<explorertype name="article" key="resource.type.base.article"
+		icon="${project.artifactId}/article.png" reference="xmlcontent">
+		<newresource page="initial.page" info="resource.desc.base.article"
+			order="12" uri="newresource_xmlcontent.jsp?newresourcetype=article" />
+	</explorertype>
+
+</explorertypes>

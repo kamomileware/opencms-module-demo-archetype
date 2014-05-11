@@ -1,0 +1,20 @@
+<resourcetypes>
+	<type name="article" id="1301"
+		class="org.opencms.file.types.CmsResourceTypeXmlContent">
+		<properties>
+			<property>
+				<name>template-elements</name>
+				<value type="shared">
+				<![CDATA[/system/modules/${project.groupId}.${project.artifactId}/templates/pages/article.jsp]]>
+				</value>
+			</property>
+			<property>
+				<name>manifest.type</name>
+				<value type="shared">
+				<![CDATA[article]]>
+				</value>
+			</property>
+		</properties>
+		<param name="schema">/system/modules/${project.groupId}.${project.artifactId}/schemas/article.xsd</param>
+	</type>
+</resourcetypes>

@@ -1,0 +1,5 @@
+<exportpoints>
+	<exportpoint uri="/system/modules/${manifest.module.name}/classes/" destination="WEB-INF/classes/"/>
+	<exportpoint uri="/system/modules/${manifest.module.name}/lib" destination="WEB-INF/lib/"/>
+	<exportpoint uri="/system/modules/${manifest.module.name}/resources/" destination="resources/${project.artifactId}/"/>
+</exportpoints>

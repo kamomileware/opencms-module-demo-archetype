@@ -1,0 +1,45 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+
+	<xsd:element name="Images" type="OpenCmsImages"/>
+
+	<xsd:complexType name="OpenCmsImages">
+		<xsd:sequence>
+			<xsd:element name="Imagen" type="OpenCmsImage" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsImage">
+		<xsd:sequence>
+			<xsd:element name="Url" type="OpenCmsVfsFile"/>
+			<xsd:element name="Alt" type="OpenCmsString"/>
+			<xsd:element name="Description" type="OpenCmsString" minOccurs="0"/>
+			<xsd:element name="PositionH" type="OpenCmsString" default="arriba"/>
+			<xsd:element name="PositionV" type="OpenCmsString" default="derecha"/>
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundle name="${package}.workplace"/>
+			<relations>
+				<relation element="Url" invalidate="false" type="strong"/>
+			</relations>
+			<validationrules>
+				<rule element="Url" regex="!^\s*$" type="error" message="Must not be empty."/>
+				<rule element="Alt" regex="!^\s*$" type="error" message="Must not be empty."/>
+				<rule element="Description" regex="!^\s*$" type="warning" message="Must not be empty."/>
+			</validationrules>
+			<defaults/>
+			<layouts>
+				<layout element="Url" widget="ImageGalleryWidget" configuration="{useformat:true}"/>
+				<layout element="Alt" widget="StringWidgetPlaintext"/>
+				<layout element="Description" widget="StringWidgetPlaintext"/>
+				<layout element="PositionH" widget="SelectorWidget" configuration="up|middle|down"/>
+				<layout element="PositionV" widget="SelectorWidget" configuration="right|center|left"/>
+			</layouts>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>
