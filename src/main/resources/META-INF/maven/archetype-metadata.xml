@@ -21,6 +21,9 @@
 		<requiredProperty key="module-plugin-version">
 			<defaultValue>0.1.0-SNAPSHOT</defaultValue>
 		</requiredProperty>
+        <requiredProperty key="opencms-version">
+            <defaultValue>9.0.1</defaultValue>
+        </requiredProperty>
 	</requiredProperties>
 	<fileSets>
 		<fileSet filtered="true" packaged="true">

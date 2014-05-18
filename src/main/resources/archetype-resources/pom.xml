@@ -26,6 +26,7 @@
 	<properties>
 		<resources.encoding>${resources-encoding}</resources.encoding>
 		<opencms.module.plugin.version>${module-plugin-version}</opencms.module.plugin.version>
+        <opencms.version>${opencms-version}</opencms.version>
 		<!-- Configures the module plugin -->
 		<manifest.module.name>${project.groupId}.${project.artifactId}</manifest.module.name>
 		<manifest.module.group>${project.groupId}</manifest.module.group>
@@ -38,7 +39,7 @@
 		<dependency>
 			<groupId>org.opencms</groupId>
 			<artifactId>opencms-core</artifactId>
-			<version>9.0.1</version>
+			<version>${opencms-version}}</version>
 			<scope>provided</scope>
 		</dependency>
 	
@@ -54,8 +55,21 @@
 	<build>
 		<defaultGoal>package</defaultGoal>
 		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>${resources.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
 				<groupId>com.kamomileware.maven.plugin.opencms</groupId>
 				<artifactId>opencms-module-maven-plugin</artifactId>
 				<version>${opencms.module.plugin.version}</version>
@@ -72,6 +86,7 @@
 							<directory>src/main/module-resources/site_content</directory>
 							<moduleTargetPath>content</moduleTargetPath>
 							<opencmsTargetPath>sites/examples</opencmsTargetPath>
+                            <filtering>true</filtering>
 						</moduleResource>
 					</moduleResources>
 				</configuration>

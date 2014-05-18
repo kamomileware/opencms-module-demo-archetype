@@ -6,7 +6,7 @@
 
 	<xsd:complexType name="OpenCmsImages">
 		<xsd:sequence>
-			<xsd:element name="Imagen" type="OpenCmsImage" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Image" type="OpenCmsImage" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 

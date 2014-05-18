@@ -2,7 +2,6 @@
 
 	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
 	<xsd:include schemaLocation="opencms://system/modules/${manifest.module.name}/schemas/basic/image.xsd"/>
-	<xsd:include schemaLocation="opencms://system/modules/${manifest.module.name}/schemas/basic/link.xsd"/>
 
 	<xsd:element name="Paragraphs" type="OpenCmsParagraphs"/>
 
@@ -17,7 +16,7 @@
 			<xsd:element name="Title" type="OpenCmsString" minOccurs="0"/>
 			<xsd:element name="Body" type="OpenCmsHtml"/>
 			<xsd:element name="Image" type="OpenCmsImage" minOccurs="0"/>
-			<xsd:element name="Links" type="OpenCmsLink" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Links" type="OpenCmsVarLink" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
 	</xsd:complexType>
@@ -29,11 +28,10 @@
 				<relation element="Image/Url" invalidate="false" type="strong"/>
 			</relations>
 			<validationrules>
-				<rule element="Title" regex="!^\s*$" type="warning" message="El elemento no debería ser vacío."/>
-				<rule element="Body" regex="!^\s*$" type="error" message="El elemento no debe ser vacío."/>
+				<rule element="Title" regex="!^\s*$" type="warning" message="Must not be empty."/>
+				<rule element="Body" regex="!^\s*$" type="error" message="Must not be empty."/>
 			</validationrules>
 			<layouts>
-				<layout element="Title" widget="StringWidgetPlaintext"/>
 				<layout element="Body" widget="HtmlWidget" configuration="height:250px,anchor,link,formatselect,source"/>
 			</layouts>
 		</xsd:appinfo>

@@ -27,13 +27,10 @@
 			</mappings>
 			<validationrules>
 				<rule element="NavText" regex="!^\s*$" type="error" message="Must not be empty."/>
-				<rule element="NavPosition" regex="\d(\.\d)?" type="error" message="Must be positive integer."/>
+				<rule element="NavPosition" regex="\d+(\.\d+)?" type="error" message="Must be positive number."/>
 			</validationrules>
 			<defaults/>
-			<layouts>
-				<layout element="NavText" widget="StringWidgetPlaintext"/>
-				<layout element="NavPosition" widget="StringWidgetPlaintext"/>
-			</layouts>
+			<layouts/>
 		</xsd:appinfo>
 	</xsd:annotation>
 </xsd:schema>
