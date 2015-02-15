@@ -19,7 +19,7 @@
 			<defaultValue>UTF-8</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="module-plugin-version">
-			<defaultValue>0.1.0-SNAPSHOT</defaultValue>
+			<defaultValue>1.0</defaultValue>
 		</requiredProperty>
         <requiredProperty key="opencms-version">
             <defaultValue>9.0.1</defaultValue>
