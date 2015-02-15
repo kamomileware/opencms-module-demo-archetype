@@ -1,37 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>com.kamomileware.maven.archetype</groupId>
 		<artifactId>maven-archetype-parent</artifactId>
-		<version>1</version>
+		<version>4-SNAPSHOT</version>
 	</parent>
-
 	<artifactId>opencms-module-demo-archetype</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
-	<name>OpenCms Module Maven Archetype</name>
+	<name>OpenCms Module Demo Maven Archetype</name>
 	<description>Build a basic module with most important opencms-maven-plugin features</description>
 	<inceptionYear>2014</inceptionYear>
-
-	<scm>
-		<connection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-archetypes/opencms-module-demo-archetype/trunk</connection>
-		<developerConnection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-archetypes/opencms-module-demo-archetype/trunk</developerConnection>
-		<url>http://karmaware.mine.nu/svn/kw/maven-archetypes/opencms-module-demo-archetype/trunk</url>
-	</scm>
-	
-	<ciManagement>
-		<system></system>
-		<url></url>
-	</ciManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-archetype-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+  <scm>
+    <connection>scm:git:github.com:kamomileware/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:kw.github.com:kamomileware/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/kamomileware/${project.artifactId}</url>
+    <tag>develop</tag>
+  </scm>
 </project>
