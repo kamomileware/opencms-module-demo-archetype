@@ -3,7 +3,7 @@
 	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
 	<xsd:include schemaLocation="opencms://system/modules/${manifest.module.name}/schemas/basic/paragraph.xsd"/>
 	<xsd:include schemaLocation="opencms://system/modules/${manifest.module.name}/schemas/config/navigation.xsd"/>
-	
+
 	<xsd:element name="Articles" type="OpenCmsArticles"/>
 
 	<xsd:complexType name="OpenCmsArticles">
@@ -39,7 +39,6 @@
 				<relation element="Paragraphs/Image/Url" type="strong" invalidate="false"/>
 			</relations>
 			<layouts/>
-            <relations/>
 		</xsd:appinfo>
 	</xsd:annotation>
 </xsd:schema>
